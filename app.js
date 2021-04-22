@@ -24,3 +24,27 @@ function doPost(e) {
   return html.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME)
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
+/*  Get the URL for the Google Apps Script running as a WebApp. */
+function getScriptUrl() {
+  var url = ScriptApp.getService().getUrl();
+  return url;
+}
+
+function doGet(e) {
+  var currentuser = Session.getActiveUser().getEmail();
+  var authusers = ["sboocock@calancs.org.uk", "aoshea@calancs.org.uk", "gsimpson@calancs.org.uk", "mdeslandes@calancs.org.uk", "myates@calancs.org.uk",
+    "jleadbetter@calancs.org.uk", "icook@calancs.org.u", "ccatterall@calancs.org.uk", "mdeslandes@calancs.org.uk",
+    "sbennett@calancs.org.uk", "admin@calancs.org.uk", "gsimpson@calancs.org.uk", "mdeslandes@calancs.org.uk",
+    "pfurner@calancs.org.uk", "amilligan@calancs.org.uk", "nhigham@calancs.org.uk", "swalsh@calancs.org.uk", "jasbury@calancs.org.uk", "pirlam@calancs.org.uk"
+  ];
+  var isauthorised = authusers.indexOf(currentuser);
+  if (isauthorised >= 0) {
+    return HtmlService.createHtmlOutputFromFile('Form');
+  } else {
+    var html = HtmlService.createTemplateFromFile('Error');
+    html.currentuser = currentuser;
+    return html.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME)
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+    //return HtmlService.createHtmlOutputFromFile('Error');
+  }
+}
