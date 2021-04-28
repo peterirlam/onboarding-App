@@ -202,3 +202,134 @@
     }
   </style>
 </head>
+
+<body>
+  <div class="center_form">
+    <div class="main-form">
+      <form onsubmit="formsubmitted()" action='https://script.google.com/a/calancs.org.uk/macros/s/AKfycbwaU1UZmevwjdjKl75kHr9aecJ7Zp_3qHXEfxWdCz0I6oKkmhjh/exec' method='post' id='leavers'>
+        <div style="margin: 0 auto;height:40px;width:100%;vertical-align:top;margin-top:-20px;display:inline-block;">
+          <h2>Notification of Staff Member or Volunteer Leaving CA Lancashire</h2>
+        </div>
+        <br /> <br />
+        <div class="info">
+          <div class="alldropdowns" style="display:flex;margin-bottom:10px;">
+            <label style="margin-top:5px;text-align:left;width:90px;">Role:</label>
+            <div class="dropdown">
+              <input style="width:120px;" id="role" name="role" class="dropbtn" placeholder="* Required" onclick="document.getElementById('role-dropdown').style.display= 'inline';" required>
+              <div id="role-dropdown" class="dropdown-content">
+                <a href="#" onclick="selectrole('Volunteer');">Volunteer</a>
+                <a href="#" onclick="selectrole('Staff');">Staff</a>
+              </div>
+            </div>
+            <label style="margin-top:5px;text-align:left;width:80px;margin-left:15px;">Workplace:</label>
+            <div class="dropdown">
+              <input style="width:170px;" name="workplace" id="workplace" class="dropbtn" placeholder="* Required" onclick="document.getElementById('workplace-dropdown').style.display= 'inline';" required>
+              <div id="workplace-dropdown" class="dropdown-content">
+                <a href="#" onclick="selectworkplace('Leyland');">Leyland</a>
+                <a href="#" onclick="selectworkplace('Chorley');">Chorley</a>
+                <a href="#" onclick="selectworkplace('West Lancashire');">West Lancashire</a>
+                <a href="#" onclick="selectworkplace('Wyre');">Wyre</a>
+                <a href="#" onclick="selectworkplace('Blackburn with Darwen');">Blackburn with Darwen</a>
+              </div>
+            </div>
+            <label style="margin-top:5px;text-align:left;width:30px;margin-left:15px;">Team:</label>
+            <div class="dropdown">
+              <input name="team" style="width:150px;margin-left:20px;" id="team" class="dropbtn" placeholder="* Required" onclick="document.getElementById('team-dropdown').style.display= 'inline';" required>
+              <div id="team-dropdown" class="dropdown-content">
+                <a href="#" onclick="selectteam('Debt');">Debt</a>
+                <a href="#" onclick="selectteam('Pension Wise');">Pension Wise</a>
+                <a href="#" onclick="selectteam('Generalist Advice');">Generalist Advice</a>
+                <a href="#" onclick="selectteam('Gateway');">Gateway</a>
+                <a href="#" onclick="selectteam('Telephone Gateway');">Telephone Gateway</a>
+                <a href="#" onclick="selectteam('Digital Help Centre');">Digital Help Centre</a>
+                <a href="#" onclick="selectteam('Help through Crisis');">Help through Crisis</a>
+                <a href="#" onclick="selectteam('Help to Claim');">Help to Claim</a>
+                <a href="#" onclick="selectteam('Energy');">Energy</a>
+                <a href="#" onclick="selectteam('Reception');">Reception</a>
+                <a href="#" onclick="selectteam('Admin');">Admin</a>
+                <a href="#" onclick="selectteam('Money Plan');">Money Plan</a>
+                <a href="#" onclick="selectteam('SMT');">SMT</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="person" style="float:left;margin-bottom:20px;">
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:90px;">First Name:</label><input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* First Name')" name="Fname_001" style="width:200px;"
+                  type="search" placeholder="* First Name" required pattern="^[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('First Name required')" oninput="this.setCustomValidity('')">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:90px;">Last Name:</label><input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* Last Name')" name="Lname_001" style="width:200px;"
+                  type="search" placeholder="* Last Name" required pattern="^[a-zA-Z\s]*$" oninvalid="this.setCustomValidity('Last Name required')" oninput="this.setCustomValidity('')">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:90px;">Email:</label>
+                <input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* Required')" name="email_001" style="width:200px;" type="search" placeholder="* Required" required
+                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" oninvalid="this.setCustomValidity('Valid email address required')" oninput="this.setCustomValidity('')">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:90px;">Phone:</label>
+                <input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* If Available')" name="phone_001" style="width:200px;" class type="search" placeholder="* If Available">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:90px;">Start date:</label>
+                <input id="sdate" name="startingdate" style="width:200px;" class onfocus="(this.type='date')" onblur="(this.type='text');if (formatDate(this.value)) {this.value=formatDate(this.value)};" placeholder="* Required (Approx Date)"
+                  required>
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:90px;">End date:</label>
+                <input id="edate" name="leavingdate" style="width:200px;" class onfocus="(this.type='date')" onblur="(this.type='text');if (formatDate(this.value)) {this.value=formatDate(this.value);};" placeholder="* Required (Exact Date)" required>
+              </div>
+            </div>
+            <div id="address" style="float:right; ">
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:100px;">Address line1:</label>
+                <input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* Address line1 required')" name="addrline1_001" class="addressfields" type="search" placeholder="* Required" required
+                  oninvalid="this.setCustomValidity('Address line1 required')" oninput="this.setCustomValidity('')">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:100px;">Address line2:</label>
+                <input name="addrline2_001" class="addressfields" type="search">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:100px;">Town/City:</label>
+                <input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* Town or City required')" name="town_001" class="addressfields" type="search" placeholder="* Required" required
+                  oninvalid="this.setCustomValidity('Town or City required')" oninput="this.setCustomValidity('')">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:100px;">County:</label>
+                <input name="county_001" class="addressfields" type="search">
+              </div>
+              <div style="display:flex;">
+                <label style="margin-top:8px;text-align:left;width:100px;">Postcode:</label>
+                <input onfocus="this.removeAttribute('placeholder')" onblur="this.setAttribute('placeholder','* Required')" name="postcode_001" class="addressfields" type="search" placeholder="* Required"
+                  pattern="[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}" required oninvalid="this.setCustomValidity('Valid postcode required')" oninput="this.setCustomValidity('')">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+        <p>Reason for leaving (if known)</p>
+        <div>
+          <textarea name="reasonforleaving" rows="2"></textarea>
+        </div>
+        <p>Outstanding expense claims?</p>
+        <div>
+          <textarea name="outstandingexpenses" rows="2"></textarea>
+        </div>
+        <p>Charity equipment to return?</p>
+        <div>
+          <textarea name="charityequipment" rows="2"></textarea>
+        </div>
+        <div style="width:100%;display:inline-block;">
+          <button id="btnsubmit" style="float:left;" onclick="checkDates(document.getElementById('sdate').value,document.getElementById('edate').value)" type="submit">Submit</button>
+          <div id="progress" style="float:left;display:none;margin-left:60px;margin-top:15px;">
+            <div style="float:left;display:inline;color:red;margin-right:40px;margin-top:10px;">Submitting please wait ...</div>
+            <div class="loader"></div>
+          </div>
+        </div>
+        <input type="hidden" id="days_in_post" name="days_in_post">
+      </form>
+    </div>
+  </div>
+</body>
